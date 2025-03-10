@@ -1,0 +1,358 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GYAANI RIE Ajmer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background-color: #004080;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            margin: 5px 0 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        section h2 {
+            color: #004080;
+            margin-bottom: 10px;
+            font-size: 1.8rem;
+        }
+
+        section p {
+            margin: 0;
+            color: #555;
+        }
+
+        .team {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .team-member {
+            flex: 1 1 calc(33.333% - 20px);
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+
+        .team-member h3 {
+            margin: 0 0 5px;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .team-member p {
+            margin: 0;
+            color: #777;
+        }
+
+        footer {
+            background-color: #004080;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .tabs button {
+            background-color: #004080;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .tabs button:hover {
+            background-color: #002b5c;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #004080;
+            color: white;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+
+        .magazine-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .magazine-box {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .magazine-box a {
+            text-decoration: none;
+            color: #004080;
+        }
+
+        .magazine-box a:hover {
+            text-decoration: underline;
+        }
+
+        .article-categories {
+            display: flex;
+            gap: 20px;
+        }
+
+        .category {
+            flex: 1;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .category h3 {
+            color: #004080;
+            margin-bottom: 10px;
+        }
+
+        .category ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .category ul li {
+            margin-bottom: 10px;
+        }
+
+        .category ul li a {
+            text-decoration: none;
+            color: #555;
+        }
+
+        .category ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #004080;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background-color: #002b5c;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        form label {
+            font-weight: bold;
+        }
+
+        form input, form textarea {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        form button {
+            padding: 10px 20px;
+            background-color: #004080;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #002b5c;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ज्ञाNI</h1>
+        <p>Connecting alumni and showcasing creativity through educational and creative articles.</p>
+        <div class="tabs">
+            <button onclick="location.href='home.html'">Home</button>
+            <button onclick="location.href='about-us.html'">About Us</button>
+            <button onclick="location.href='our-team.html'">Our Team</button>
+            <button onclick="location.href='our-services.html'">Our Services</button>
+            <button onclick="location.href='join-us.html'">Join Us</button>
+        </div>
+    </header>
+
+
+    <div class="container">
+        <section>
+            <h2>About Us</h2>
+            <p>Welcome to our initiative – Empowering Careers & Skills
+Here, we are dedicated to shaping the future of our students by providing placement support and skill-enhancing opportunities. Our mission is to bridge the gap between academic learning and industry requirements by offering:
+		<ul>
+		<li>✅ Placement Assistance – Connect with top recruiters, access job opportunities, and participate in placement drives.</li>
+		<li>✅ Skill Development Programs – Learn industry-relevant skills through workshops, training sessions, and expert-led courses.</li>
+		<li>✅ E-Content Library – Explore a vast collection of online resources, study materials, and technical guides.</li>
+		<li>✅ Monthly Magazine – Stay updated with insights, articles, and interviews that inspire learning and growth.</li>
+		</ul>
+		<p>Join us in building careers and unlocking potential. Whether you're a student preparing for placements or someone looking to enhance your skills, we are here to guide you every step of the way! 🚀</p>
+
+Explore our services and take your career to new heights!</p>
+           
+       
+        </section>
+
+        <section>
+            <h2>Monthly Magazines</h2>
+            <div class="magazine-grid">
+                <div class="magazine-box"><a href="january.html">January</a></div>
+                <div class="magazine-box"><a href="february.html">February</a></div>
+                <div class="magazine-box"><a href="march.html">March</a></div>
+                <div class="magazine-box"><a href="april.html">April</a></div>
+                <div class="magazine-box"><a href="may.html">May</a></div>
+                <div class="magazine-box"><a href="june.html">June</a></div>
+                <div class="magazine-box"><a href="july.html">July</a></div>
+                <div class="magazine-box"><a href="august.html">August</a></div>
+                <div class="magazine-box"><a href="september.html">September</a></div>
+                <div class="magazine-box"><a href="october.html">October</a></div>
+                <div class="magazine-box"><a href="november.html">November</a></div>
+                <div class="magazine-box"><a href="december.html">December</a></div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Articles</h2>
+            <div class="article-categories">
+                <div class="category">
+                    <h3>Educational Articles</h3>
+                    <ul>
+                        <li><a href="#">Future of Artificial Intelligence</a></li>
+                        <li><a href="#">Climate Change and Sustainability</a></li>
+                    </ul>
+                </div>
+                <div class="category">
+                    <h3>Creative Articles</h3>
+                    <ul>
+                        <li><a href="#">A Poem: Whispers of the Wind</a></li>
+                        <li><a href="#">Short Story: The Lost Path</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Connect with Alumni</h2>
+            <p>Join our growing alumni network and stay connected with your college community.</p>
+            <a href="alumni-registration.html" class="btn">Join Alumni Network</a>
+        </section>
+
+        <section>
+            <h2>Contact Us</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 College Alumni and Magazine Hub. All Rights Reserved.
+	<div class="social-links">
+            <a href="https://www.instagram.com/guptaabhay11786/" target="_blank">Instagram</a>
+            <a href="https://www.facebook.com/profile.php?id=100017739129973&ref=xav_ig_profile_web" target="_blank">Facebook</a>
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+        </div>
+	</p>
+    </footer>
+</body>
+</html>
