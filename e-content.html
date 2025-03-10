@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #004080;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        h2 {
+            color: #004080;
+        }
+
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+
+        .google-drive-links {
+            margin-top: 20px;
+        }
+
+        .google-drive-links a {
+            display: block;
+            padding: 10px;
+            margin: 5px;
+            background-color: #004080;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .google-drive-links a:hover {
+            background-color: #00264d;
+        }
+
+        .youtube-video {
+            margin-top: 20px;
+        }
+
+        .table-container {
+            margin-top: 20px;
+        }
+
+        .table-container table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table-container table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        .table-container th, td {
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Our Services</h1>
+        <p>Explore our offerings</p>
+    </header>
+
+    <div class="container">
+        <!-- Google Sheets Data -->
+        <h2>📊 Dynamic Excel Content</h2>
+        <div class="table-container" id="sheet-data"></div>
+
+        <!-- Google Drive Folders -->
+        <h2>🔗 Google Drive Folders</h2>
+        <div class="google-drive-links">
+            <a href="https://drive.google.com/folderlink1" target="_blank">Folder 1: Course Materials</a>
+            <a href="https://drive.google.com/folderlink2" target="_blank">Folder 2: Research Papers</a>
+        </div>
+
+        <!-- YouTube Video -->
+        <h2>🎬 YouTube Videos</h2>
+        <div class="youtube-video">
+            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Your Website Name. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Load Data from Google Sheets using the Sheets API
+        const sheetId = "YOUR_GOOGLE_SHEET_ID";  // Replace with your Google Sheets ID
+        const range = "Sheet1"; // Replace with your sheet name or range
+
+        const apiKey = "YOUR_GOOGLE_API_KEY"; // Replace with your Google API key
+
+        function loadSheetData() {
+            const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`;
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const rows = data.values;
+                    if (rows.length > 0) {
+                        let tableHtml = '<table><thead><tr>';
+                        rows[0].forEach(header => {
+                            tableHtml += `<th>${header}</th>`;
